@@ -3,6 +3,7 @@
 from dataclasses import dataclass
 from random import randrange as uniform
 
+
 # ------------------------------------------------------------------------------
 # Math
 # ------------------------------------------------------------------------------
@@ -88,8 +89,9 @@ def __make_random_prime(lower: int, upper: int) -> int:
         p = uniform(lower, upper)
     return p
 
+
 # ------------------------------------------------------------------------------
-# Keys
+# RSA
 # ------------------------------------------------------------------------------
 
 
@@ -121,11 +123,6 @@ def make_key_pair(bits: int) -> tuple[PublicKey, PrivateKey]:
     n = p * q
 
     return (PublicKey(e, n), PrivateKey(d, n))
-
-
-# ------------------------------------------------------------------------------
-# Encryption/Decryption
-# ------------------------------------------------------------------------------
 
 
 def encrypt(m: int, public: PublicKey) -> int:
